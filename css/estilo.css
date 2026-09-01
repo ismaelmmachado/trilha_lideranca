@@ -129,10 +129,11 @@
 
 .hero h1 {
   font-family: var(--font-heading);
-  color: var(--ink);
+  font-size: var(--h1);
+  color: var(--off-black);
+  font-weight: 700;
   margin-bottom: 0.7em;
 }
-
 .hero .subtitle {
   font-size: var(--lead);
   color: var(--muted);

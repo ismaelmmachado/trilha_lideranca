@@ -20,23 +20,25 @@
   --rubi: #b3493a;
 
   /* Superfícies e texto */
-  --surface: #ffffff;
+  --bg-page: #d9e1dc; /* Nova cor de fundo solicitada */
+  --surface: #ffffff; /* Cor de fundo para cartões */
   --ink: var(--off-black);
   --muted: var(--muted-nova);
   --border: var(--border-nova);
+  --accent-on-accent: #ffffff;
 
   /* Tipografia — Sans-Serif Geométrica (Montserrat) */
   --font-heading: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* Escala tipográfica responsiva (Mobile First) */
-  --h1: clamp(2rem, 5vw, 3rem);
-  --h2: clamp(1.5rem, 3vw, 2.2rem);
-  --h3: clamp(1.15rem, 2vw, 1.4rem);
-  --body: clamp(1rem, 1.4vw, 1.125rem);
+  --h1: clamp(2rem, 5vw, 3.2rem);
+  --h2: 1.75rem;
+  --h3: 1.25rem;
+  --body: 1rem;
   --small: 0.875rem;
-  --label: 0.72rem;
-  --lead: clamp(1rem, 1.6vw, 1.2rem);
+  --label: 0.875rem;
+  --lead: 1rem;
 
   /* Espaçamento e layout */
   --radius: 8px;
@@ -52,17 +54,13 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Alias mantidos para compatibilidade */
---font-serif: var(--font-heading);
---font-sans: var(--font-body);
-
 /* Dark mode automático */
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #101614;
+    --bg-page: #101614;
+    --surface: #16201E;
     --ink: #ffffff;
     --muted: #b9c4c0;
     --border: rgba(255, 255, 255, 0.12);
-    --sage-claro: rgba(148, 166, 154, 0.12);
   }
 }

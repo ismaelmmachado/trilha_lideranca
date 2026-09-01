@@ -21,7 +21,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--ink);
+  color: var(--off-black);
   line-height: 1.2;
   margin: 0 0 0.6em;
   font-weight: 700;
