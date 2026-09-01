@@ -61,18 +61,3 @@
   --font-serif: var(--font-heading);
   --font-sans: var(--font-body);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-page: #1a1f1d;
-    --surface: #242a27;
-    --ink: #e8ede9;
-    --muted: #92a69a;
-    --border: #2e3832;
-    --border-nova: #2e3832;
-    --muted-nova: #92a69a;
-    --off-black: #e8ede9;
-    --sage-claro: #1e2825;
-    --accent-on-accent: #ffffff;
-  }
-}
