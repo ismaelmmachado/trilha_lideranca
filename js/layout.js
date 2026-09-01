@@ -41,7 +41,9 @@
     return '<footer class="site-footer">' +
       '<div class="container footer-inner">' +
       '<strong>Trilha de Liderança</strong>' +
+      '<div class="footer-divider"></div>' +
       '<p>Comunidade Vitral · IPIB São José do Rio Preto</p>' +
+      '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' Comunidade Vitral</p>' +
       '</div>' +
       '</footer>';
   }
