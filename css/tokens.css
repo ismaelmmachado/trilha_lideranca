@@ -60,15 +60,17 @@
   --font-sans: var(--font-body);
 }
 
-/* Dark mode automático (apenas para texto e bordas se o fundo for mantido claro) 
-   Ou se desejar dark mode total, o usuário deve especificar. 
-   Por enquanto, vou manter o fundo solicitado pelo usuário como prioridade. */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Mantendo --bg-page conforme solicitado pelo usuário (#d9e1dc) */
-    --surface: #ffffff; 
-    --ink: var(--off-black);
-    --muted: var(--muted-nova);
-    --border: var(--border-nova);
+    --bg-page: #1a1f1d;
+    --surface: #242a27;
+    --ink: #e8ede9;
+    --muted: #92a69a;
+    --border: #2e3832;
+    --border-nova: #2e3832;
+    --muted-nova: #92a69a;
+    --off-black: #e8ede9;
+    --sage-claro: #1e2825;
+    --accent-on-accent: #ffffff;
   }
 }

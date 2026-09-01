@@ -8,36 +8,20 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Trilha de Liderança · Comunidade Vitral">
   <meta property="og:description" content="Liderança com Bacia e Toalha — A Treliça a Serviço da Videira. Capacitação de discípulos-líderes da Comunidade Vitral.">
-  <meta property="og:image" content="https://ismaelmmachado.github.io/trilha_lideranca/assets/og-image.svg">
+  <meta property="og:image" content="https://ismaelmmachado.github.io/trilha_lideranca/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://ismaelmmachado.github.io/trilha_lideranca/">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo-link" href="index.html">
-        <span class="logo-text">VITRAL</span>
-        <span class="logo-signature">IGREJA EM PESSOAS</span>
-      </a>
-      <nav class="nav" aria-label="Menu principal">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="index.html" aria-current="page">Início</a></li>
-          <li><a href="mapa.html">Mapa</a></li>
-          <li><a href="material-de-apoio.html">Material de Apoio</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header-placeholder"></div>
 
   <main id="main">
     <section class="hero">
@@ -53,41 +37,15 @@
         <p class="section-label">Os 4 Módulos</p>
         <h2>A jornada de formação</h2>
         <p class="section-lead">Cada módulo é um encontro. Cada encontro é uma conversa. Cada conversa te aproxima de liderar com graça.</p>
-        <div class="modulos-grid" id="modulos-grid">
-          <!-- gerado via JS com dados/modulos.json -->
-        </div>
+        <div class="modulos-grid" id="modulos-grid"></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <strong>Trilha de Liderança</strong>
-      <p>Comunidade Vitral · IPIB São José do Rio Preto</p>
-    </div>
-  </footer>
+  <div id="site-footer-placeholder"></div>
 
+  <script src="js/layout.js"></script>
   <script src="js/menu.js"></script>
-  <script>
-    var grid = document.getElementById('modulos-grid');
-    fetch('dados/modulos.json')
-      .then(function(r){ return r.json(); })
-      .then(function(modulos){
-        modulos.forEach(function(m){
-          var card = document.createElement('a');
-          card.href = 'modulo-' + m.id + '.html';
-          card.className = 'modulo-card';
-          card.innerHTML =
-            '<div class="modulo-numero">' + m.icone + '</div>' +
-            '<h3>' + m.titulo + '</h3>' +
-            '<p>' + m.resumo + '</p>' +
-            '<span class="btn btn-outline">Abrir Módulo</span>';
-          grid.appendChild(card);
-        });
-      })
-      .catch(function(){
-        grid.innerHTML = '<p>Não foi possível carregar os módulos.</p>';
-      });
-  </script>
+  <script src="js/modulos.js"></script>
 </body>
 </html>
