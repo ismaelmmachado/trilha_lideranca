@@ -1,6 +1,6 @@
-/* Trilha de Liderança — Estilo unificado no padrão Vitral */
+/* Marca Nova — Comunidade Vitral */
 
-/* Header */
+/* === HEADER === */
 .site-header {
   position: sticky;
   top: 0;
@@ -30,16 +30,18 @@
   flex-direction: column;
   text-decoration: none;
   color: var(--ink);
-  font-weight: 700;
   line-height: 1.1;
 }
 
 .logo-text {
+  font-family: var(--font-heading);
   font-size: 1.25rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 .logo-signature {
+  font-family: var(--font-heading);
   font-size: 0.65rem;
   font-weight: 500;
   color: var(--muted);
@@ -66,9 +68,11 @@
   padding: 8px 12px;
   color: var(--ink);
   text-decoration: none;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: var(--radius);
+  transition: color 0.2s, background 0.2s;
 }
 
 .nav-menu a:hover,
@@ -82,19 +86,18 @@
   background: transparent;
   border: 1px solid var(--border);
   color: var(--ink);
-  font: inherit;
+  font-family: var(--font-body);
   font-weight: 600;
   padding: 8px 14px;
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 48px;
+  min-height: 48px;
   border-radius: var(--radius);
   cursor: pointer;
 }
 
-/* Hero (landing específica da trilha) */
+/* === HERO === */
 .hero {
   position: relative;
-  background: linear-gradient(180deg, var(--sage-claro) 55%, #ffffff 100%);
   padding: var(--section) 0;
   text-align: center;
   overflow: hidden;
@@ -110,19 +113,76 @@
   background: linear-gradient(90deg, var(--safira) 0 25%, var(--esmeralda) 25% 50%, var(--ambar) 50% 75%, var(--rubi) 75% 100%);
 }
 
+.hero-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--label);
+  font-weight: 700;
+  color: var(--petroleo);
+  background: var(--sage-claro);
+  border: 1px solid rgba(0, 95, 107, 0.25);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.2rem;
+}
+
 .hero h1 {
+  font-family: var(--font-heading);
   color: var(--ink);
   margin-bottom: 0.7em;
 }
 
 .hero .subtitle {
-  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  font-size: var(--lead);
   color: var(--muted);
-  max-width: 40ch;
+  max-width: 640px;
   margin: 0 auto var(--space);
+  line-height: 1.6;
 }
 
-/* Breadcrumb */
+
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: var(--space);
+}
+.hero-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === SECTION === */
+.section {
+  padding: var(--section) 0;
+}
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--label);
+  font-weight: 700;
+  color: var(--petroleo);
+  margin-bottom: 0.8rem;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: var(--h2);
+  margin-bottom: 0.6em;
+}
+
+.section-lead {
+  color: var(--muted);
+  max-width: var(--content-max);
+  margin: 0 auto var(--space);
+  line-height: 1.6;
+}
+
+/* === BREADCRUMB === */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -150,7 +210,7 @@
   color: var(--border);
 }
 
-/* Módulos grid */
+/* === MÓDULOS GRID === */
 .modulos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -171,39 +231,42 @@
 
 .modulo-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 67, 77, 0.10);
+  box-shadow: var(--shadow-lg);
 }
 
 .modulo-numero {
   width: 44px;
   height: 44px;
   border-radius: var(--radius);
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
   color: var(--petroleo);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .modulo-card h3 {
+  font-family: var(--font-heading);
   font-size: var(--h3);
   margin: 0;
 }
 
 .modulo-card p {
-  font-size: 0.95rem;
+  font-size: var(--body);
   color: var(--muted);
   flex: 1;
   margin: 0;
+  line-height: 1.6;
 }
 
-/* Page header para páginas de módulo */
+/* === PAGE HEADER === */
 .page-header {
-  padding: var(--section) 0 var(--space);
+  padding: var(--space) 0;
   border-bottom: 1px solid var(--border);
-  margin-bottom: var(--section);
+  margin-bottom: var(--space);
 }
 
 .etapa-badge {
@@ -212,7 +275,7 @@
   gap: var(--space);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
   color: var(--petroleo);
   font-size: var(--label);
   font-weight: 700;
@@ -222,12 +285,13 @@
 }
 
 .step-subtitle {
-  font-size: 1.1rem;
+  font-size: var(--lead);
   color: var(--muted);
   margin-top: var(--space);
+  line-height: 1.6;
 }
 
-/* Step sections */
+/* === STEP SECTIONS === */
 .step-section {
   margin-bottom: var(--section);
 }
@@ -238,7 +302,7 @@
   gap: var(--space);
   margin-bottom: var(--space);
   padding-bottom: var(--space);
-  border-bottom: 2px solid rgba(0, 95, 107, 0.08);
+  border-bottom: 2px solid var(--sage-claro);
 }
 
 .section-icon {
@@ -248,13 +312,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
   color: var(--petroleo);
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
 .step-section-header h2 {
+  font-family: var(--font-heading);
   font-size: var(--h2);
 }
 
@@ -269,21 +334,19 @@
   margin-top: var(--space);
 }
 
-/* Para começar footer */
-.para-comecar-footer {
-  margin-top: var(--space);
-  padding-top: var(--space);
-  border-top: 1px solid var(--border);
-}
-
-/* Buttons padrão Vitral */
+/* === BUTTONS === */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space);
+  min-height: 48px;
   padding: 13px 26px;
   border-radius: var(--radius);
-  text-decoration: none;
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.98rem;
+  text-decoration: none;
   border: 1px solid transparent;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   cursor: pointer;
@@ -295,12 +358,12 @@
 
 .btn-primary {
   background: var(--petroleo);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 95, 107, 0.22);
+  color: var(--accent-on-accent, #ffffff);
+  box-shadow: 0 4px 14px rgba(0, 95, 107, 0.22);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 12px 26px rgba(0, 95, 107, 0.30);
+  box-shadow: 0 6px 20px rgba(0, 95, 107, 0.30);
 }
 
 .btn-outline {
@@ -310,40 +373,39 @@
 }
 
 .btn-outline:hover {
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
 }
 
-/* Download button */
+/* === DOWNLOAD BUTTON === */
 .download-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space);
   padding: 13px 26px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-pill);
   background: var(--petroleo);
-  color: #ffffff;
+  color: var(--accent-on-accent, #ffffff);
   font-weight: 600;
   font-size: 0.9rem;
   min-height: 44px;
-  transition: all 0.2s ease;
   text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 95, 107, 0.22);
 }
 
 .download-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 95, 107, 0.30);
 }
 
 .download-btn.is-unavailable {
   background: var(--muted);
   color: #fff;
+  box-shadow: none;
   cursor: default;
 }
 
-.download-btn.is-unavailable:hover {
-  transform: none;
-}
-
-/* Pratique sections */
+/* === PRATIQUE === */
 .pratique-experimento {
   padding: var(--space);
   background: var(--surface);
@@ -358,13 +420,20 @@
   font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin-bottom: 8px;
+}
+
+.pratique-experimento p {
+  font-size: var(--body);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .pratique-pergunta {
   padding: var(--space);
   border-radius: var(--radius);
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
   border: 1px solid rgba(0, 95, 107, 0.15);
 }
 
@@ -373,10 +442,17 @@
   font-size: var(--label);
   color: var(--petroleo);
   text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin-bottom: 8px;
 }
 
-/* Week plan grid */
+.pratique-pergunta p {
+  font-size: var(--body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* === WEEK PLAN === */
 .week-plan-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -394,6 +470,7 @@
   display: block;
   font-size: var(--small);
   color: var(--petroleo);
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
@@ -402,7 +479,7 @@
   line-height: 1.4;
 }
 
-/* Step navigation */
+/* === STEP NAV === */
 .step-nav {
   display: flex;
   justify-content: space-between;
@@ -423,7 +500,7 @@
   opacity: 0.5;
 }
 
-/* Mapa cards */
+/* === MAPA CARDS === */
 .mapa-card {
   padding: var(--space);
   background: var(--surface);
@@ -433,6 +510,7 @@
 }
 
 .mapa-card h3 {
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   margin-bottom: var(--space);
   color: var(--petroleo);
@@ -448,7 +526,7 @@
   display: flex;
   gap: var(--space);
   padding: var(--space);
-  background: rgba(0, 95, 107, 0.08);
+  background: var(--sage-claro);
   border-radius: var(--radius);
   border: 1px solid rgba(0, 95, 107, 0.15);
   align-items: center;
@@ -456,14 +534,15 @@
 
 .dica strong {
   font-size: 1.5rem;
+  color: var(--petroleo);
 }
 
 .dica span {
-  font-size: 0.95rem;
-  font-style: italic;
+  font-size: var(--body);
+  line-height: 1.6;
 }
 
-/* Footer */
+/* === FOOTER === */
 .site-footer {
   position: relative;
   background: var(--grad-banner);
@@ -484,6 +563,7 @@
 
 .footer-inner strong {
   display: block;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   margin-bottom: 8px;
   color: #fff;
@@ -494,7 +574,7 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* Mobile responsivo */
+/* === MOBILE RESPONSIVE === */
 @media (max-width: 1024px) {
   .nav-toggle {
     display: block;
@@ -508,7 +588,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: #ffffff;
+    background: var(--surface);
     padding: 88px 24px 24px;
     overflow-y: auto;
   }
@@ -531,7 +611,7 @@
     align-items: center;
     min-height: 48px;
     font-size: 1.15rem;
-    border-bottom: 1px solid var(--sage-claro);
+    border-bottom: 1px solid var(--border);
   }
 }
 
@@ -547,6 +627,10 @@
 
   .step-nav-link {
     justify-content: center;
+  }
+
+  .hero {
+    padding: var(--space) 0;
   }
 }
 
