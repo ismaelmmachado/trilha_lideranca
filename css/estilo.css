@@ -141,21 +141,6 @@
   line-height: 1.6;
 }
 
-
-
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: var(--space);
-}
-.hero-cta .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* === SECTION === */
 .section {
   padding: var(--section) 0;
@@ -228,12 +213,10 @@
   gap: 1rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .modulo-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
-
 .modulo-numero {
   width: 44px;
   height: 44px;
@@ -247,19 +230,20 @@
   font-weight: 700;
   flex-shrink: 0;
 }
-
 .modulo-card h3 {
   font-family: var(--font-heading);
   font-size: var(--h3);
   margin: 0;
 }
-
 .modulo-card p {
   font-size: var(--body);
   color: var(--muted);
   flex: 1;
   margin: 0;
   line-height: 1.6;
+}
+.modulo-card .btn {
+  align-self: flex-start;
 }
 
 /* === PAGE HEADER === */
