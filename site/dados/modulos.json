@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "titulo": "O Chão da Vida e o Diagnóstico Empático",
+    "resumo": "O planejamento começa na escuta e na oração, não na imposição de ideias.",
+    "icone": "🌆",
+    "pdf": "MODULO 1"
+  },
+  {
+    "id": 2,
+    "titulo": "A Treliça que Sustenta",
+    "resumo": "Estruturas não existem para controlar, mas para dar suporte e permitir que a vida cresça.",
+    "icone": "🪜",
+    "pdf": "MODULO 2"
+  },
+  {
+    "id": 3,
+    "titulo": "Bacia e Toalha — Gestão de Pessoas e Ritmo",
+    "resumo": "Servir não é uma tarefa que fazemos quando sobra tempo; é a nossa identidade.",
+    "icone": "🧽",
+    "pdf": "MODULO 3"
+  },
+  {
+    "id": 4,
+    "titulo": "Protegendo o Foco e Enviando",
+    "resumo": "Liderar é saber tomar decisões rápidas sob pressão, mantendo a paz e a visão clara.",
+    "icone": "🛡️",
+    "pdf": "MODULO 4"
+  }
+]
