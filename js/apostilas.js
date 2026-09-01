@@ -25,7 +25,7 @@
       var item = localStorage.getItem(CONFIG.cacheKey);
       if (!item) return null;
       var parsed = JSON.parse(item);
-      if (Date.now() - parsed.timestamp > 3600000) return null; // 1h cache
+      if (Date.now() - parsed.timestamp > 3600000) return null;
       return parsed.arquivos;
     } catch (e) { return null; }
   }
@@ -39,23 +39,24 @@
     } catch (e) {}
   }
 
-  async function listarArquivos() {
+  function listarArquivos() {
     var cache = carregarDoCache();
-    if (cache) return cache;
-
-    try {
-      var url = `https://api.github.com/repos/${CONFIG.repo}/contents/${CONFIG.pasta}?ref=${CONFIG.branch}`;
-      var res = await fetch(url);
-      if (!res.ok) return [];
-      var data = await res.json();
-      var arquivos = Array.isArray(data) ? data.map(f => ({ nome: f.name, url: f.download_url })) : [];
-      salvarNoCache(arquivos);
-      return arquivos;
-    } catch (e) { return []; }
+    if (cache) return Promise.resolve(cache);
+    var url = 'https://api.github.com/repos/' + CONFIG.repo + '/contents/' + CONFIG.pasta + '?ref=' + CONFIG.branch;
+    return fetch(url)
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (data) {
+        var arquivos = Array.isArray(data)
+          ? data.map(function (f) { return { nome: f.name, url: f.download_url }; })
+          : [];
+        salvarNoCache(arquivos);
+        return arquivos;
+      })
+      .catch(function () { return []; });
   }
 
   function escolherMatch(arquivos, padrao) {
-    return arquivos.find(f => padrao.test(normalize(f.nome)));
+    return arquivos.find(function (f) { return padrao.test(normalize(f.nome)); });
   }
 
   function montarBotao(botao, arquivo) {
@@ -65,27 +66,26 @@
   }
 
   function tratarFalha(botoes) {
-    botoes.forEach(b => {
+    botoes.forEach(function (b) {
       b.classList.add('is-unavailable');
       b.querySelector('.download-label').textContent = 'Apostila em breve';
       b.removeAttribute('aria-busy');
     });
   }
 
-  document.addEventListener('DOMContentLoaded', async function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var botoes = document.querySelectorAll('.apostila-btn');
     if (!botoes.length) return;
 
-    var arquivos = await listarArquivos();
-    if (!arquivos.length) return tratarFalha(botoes);
-
-    botoes.forEach(botao => {
-      var token = botao.getAttribute('data-apostila-token');
-      var padrao = buildTokenPattern(token);
-      var match = escolherMatch(arquivos, padrao);
-      
-      if (match) montarBotao(botao, match);
-      else tratarFalha([botao]);
+    listarArquivos().then(function (arquivos) {
+      if (!arquivos.length) return tratarFalha(Array.prototype.slice.call(botoes));
+      botoes.forEach(function (botao) {
+        var token = botao.getAttribute('data-apostila-token');
+        var padrao = buildTokenPattern(token);
+        var match = escolherMatch(arquivos, padrao);
+        if (match) montarBotao(botao, match);
+        else tratarFalha([botao]);
+      });
     });
   });
 })();

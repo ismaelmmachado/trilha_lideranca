@@ -1,0 +1,53 @@
+:root {
+  /* Marca Nova — Verde Petróleo + Verde Acinzentado (padrão único do site) */
+  --petroleo: #005f6b;
+  --petroleo-deep: #00434d;
+  --sage: #94a69a;
+  --sage-lighter: #c6d6cc;
+  --sage-claro: #e9ede9;
+  --off-black: #1f2421;
+  --muted-nova: #5b6b63;
+  --border-nova: #d7ded9;
+
+  --grad-banner: linear-gradient(160deg, #00434d 0%, #005f6b 100%);
+
+  /* Gemas do vitral — marca inegociável (tira de 4 cores) */
+  --safira: #2f5f92;
+  --esmeralda: #3f6f5a;
+  --ambar: #d99b2b;
+  --rubi: #b3493a;
+
+  /* Alias mantidos para o base/estilo (valores Marca Nova) */
+  --surface: #ffffff;
+  --ink: var(--off-black);
+  --muted: var(--muted-nova);
+  --border: var(--border-nova);
+
+  --font-serif: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --h1: clamp(2rem, 4.6vw, 3.4rem);
+  --h2: clamp(1.5rem, 3vw, 2.2rem);
+  --h3: clamp(1.15rem, 2vw, 1.4rem);
+  --body: clamp(1rem, 1.4vw, 1.125rem);
+  --small: 0.875rem;
+  --label: 0.72rem;
+
+  --radius: 8px;
+  --radius-pill: 999px;
+  --space: clamp(1.1rem, 3vw, 2.2rem);
+  --section: clamp(3rem, 7vw, 6rem);
+
+  --maxw: 1120px;
+  --bp-mobile: 760px;
+}
+
+/* Dark mode automático (específico Vitral) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #101614;
+    --ink: #ffffff;
+    --muted: #b9c4c0;
+    --border: rgba(255,255,255,0.12);
+  }
+}
