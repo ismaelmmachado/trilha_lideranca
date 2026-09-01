@@ -20,7 +20,7 @@
   --rubi: #b3493a;
 
   /* Superfícies e texto */
-  --bg-page: #d9e1dc; /* Nova cor de fundo solicitada */
+  --bg-page: #d9e1dc; /* Cor de fundo fixa solicitada */
   --surface: #ffffff; /* Cor de fundo para cartões */
   --ink: var(--off-black);
   --muted: var(--muted-nova);
@@ -54,13 +54,21 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Dark mode automático */
+/* Alias para compatibilidade */
+:root {
+  --font-serif: var(--font-heading);
+  --font-sans: var(--font-body);
+}
+
+/* Dark mode automático (apenas para texto e bordas se o fundo for mantido claro) 
+   Ou se desejar dark mode total, o usuário deve especificar. 
+   Por enquanto, vou manter o fundo solicitado pelo usuário como prioridade. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-page: #101614;
-    --surface: #16201E;
-    --ink: #ffffff;
-    --muted: #b9c4c0;
-    --border: rgba(255, 255, 255, 0.12);
+    /* Mantendo --bg-page conforme solicitado pelo usuário (#d9e1dc) */
+    --surface: #ffffff; 
+    --ink: var(--off-black);
+    --muted: var(--muted-nova);
+    --border: var(--border-nova);
   }
 }
