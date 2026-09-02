@@ -26,8 +26,7 @@
       '<header class="site-header">' +
       '<div class="container header-inner">' +
       '<a class="logo-link" href="index.html">' +
-      '<span class="logo-text">VITRAL</span>' +
-      '<span class="logo-signature">IGREJA EM PESSOAS</span>' +
+      '<img src="assets/logo.svg" class="logo-img" alt="Vitral - Igreja em Pessoas">' +
       '</a>' +
       '<nav class="nav" aria-label="Menu principal">' +
       '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>' +

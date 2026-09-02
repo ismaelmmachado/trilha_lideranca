@@ -27,26 +27,15 @@
 
 .logo-link {
   display: inline-flex;
-  flex-direction: column;
   text-decoration: none;
+  /* remover: flex-direction: column; */
   color: var(--ink);
   line-height: 1.1;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
+.logo-text,
 .logo-signature {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .nav {
@@ -649,4 +638,10 @@
   .modulo-card:hover {
     transform: none;
   }
+}
+
+.logo-img {
+  width: 140px;
+  height: auto;
+  display: block;
 }
